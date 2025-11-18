@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Virtual Tour - Candi Kidal</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Kamera + Cursor -->
+      <a-entity id="cameraRig" camera look-controls position="0 1.6 0">
+        <a-cursor id="cursor"
+                  color="#FFCC00"
+                  fuse="false"
+                  cursor="rayOrigin: mouse"
+                  raycaster="objects: .clickable"
+                  material="shader: flat">
+        </a-cursor>
+      </a-entity>
+
+      <!-- SKYBOX 1 (Pintu Masuk) -->
+      <a-sky id="sky1" src="candikidal1.jpeg" rotation="0 -90 0" visible="true"></a-sky>
+
+      <!-- SPOT 1 → NEXT (ke Pos Penjagaan) -->
+      <a-plane id="spot1" class="clickable"
+               position="0 1.8 -2"
+               width="2.8" height="0.6"
+               material="color: #000; opacity: 0">
+        <a-text value="➡️ Masuk ke Pos Penjagaan"
+                color="#FFD700"
+                align="center"
+                width="4"
+                position="0 0 0.01"></a-text>
+
+        <a-animation attribute="position"
+                     dur="1600" direction="alternate"
+                     repeat="indefinite"
+                     to="0 1.95 -2"></a-animation>
+      </a-plane>
+      <script>
+        const sky1 = document.querySelector("#sky1");
+
+        
+      </script>
+      
